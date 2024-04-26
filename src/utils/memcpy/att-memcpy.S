@@ -9,9 +9,9 @@
 	# rsi: src
 	# rdx: size
 memcpy:
-	xor %rcx, %rcx
+	xor %rcx, %rcx # Counter = 0
 	memcpy_counter:
-		cmp %rdx, %rcx # Counter = 0
+		cmp %rdx, %rcx # Compare counter and given size
 		jae memcpy_end
 
 		# Copy one byte from src to dst
